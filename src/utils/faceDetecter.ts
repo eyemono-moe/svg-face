@@ -1,4 +1,5 @@
 import { FaceMesh } from "@mediapipe/face_mesh";
+import animateFace from "./animateFace";
 import drawFaceMesh from "./drawFaceMesh";
 import startCamera from "./startCamera";
 
@@ -27,7 +28,7 @@ const faceDetector = (
       width: videoElement.videoWidth,
       height: videoElement.videoHeight,
     });
-    // todo: animateSvgFace();
+    animateFace(results.multiFaceLandmarks[0]);
   });
 
   startCamera(faceMesh, videoElement);
