@@ -1,9 +1,8 @@
+import { drawConnectors, drawLandmarks } from "@mediapipe/drawing_utils";
 import {
-  drawConnectors,
-  drawLandmarks,
+  FACEMESH_TESSELATION,
   NormalizedLandmarkList,
-} from "@mediapipe/drawing_utils";
-import { FACEMESH_TESSELATION } from "@mediapipe/face_mesh";
+} from "@mediapipe/face_mesh";
 
 const drawFaceMesh = (
   points: NormalizedLandmarkList,
