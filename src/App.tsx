@@ -2,6 +2,8 @@ import { Component, onMount } from "solid-js";
 import faceDetector from "./utils/faceDetecter";
 
 import style from "./App.module.css";
+import Face from "./components/Face";
+import { shape } from "./components/ShapeStore";
 
 const App: Component = () => {
   let canvas: HTMLCanvasElement;
@@ -12,12 +14,15 @@ const App: Component = () => {
   });
 
   return (
-    <div class={style.wrapper}>
-      <div class={style.detectResult}>
-        <video ref={videoElement!} />
-        <canvas ref={canvas!} />
+    <>
+        <div class={style.detectWrapper}>
+          <div class={style.detectResult}>
+            <video ref={videoElement!} />
+            <canvas ref={canvas!} />
+        </div>
       </div>
-    </div>
+      <Face shape={shape} />
+    </>
   );
 };
 

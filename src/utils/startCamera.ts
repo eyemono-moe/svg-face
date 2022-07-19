@@ -6,8 +6,8 @@ const startCamera = (faceMesh: FaceMesh, videoElement: HTMLVideoElement) => {
     onFrame: async () => {
       await faceMesh.send({ image: videoElement });
     },
-    width: 640,
-    height: 480,
+    width: 400,
+    height: 400,
   });
   camera.start();
 };
