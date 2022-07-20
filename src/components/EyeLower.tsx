@@ -1,9 +1,10 @@
+import { TFace } from "kalidokit";
 import { Component } from "solid-js";
 import BlendSvg from "../utils/blendSvg";
 import SvgPath from "../utils/svgPath";
 
 const EyeLower: Component<{
-  pupil: { x: number; y: number };
+  pupil: TFace["pupil"];
   open: number;
 }> = (props) => {
   const eyeWhiteOpened = new SvgPath(
