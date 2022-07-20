@@ -10,7 +10,11 @@ const App: Component = () => {
   let videoElement: HTMLVideoElement;
 
   onMount(() => {
-    faceDetector(canvas, videoElement);
+    navigator.mediaDevices
+      .getUserMedia({ audio: false, video: true })
+      .then(() => {
+        faceDetector(canvas, videoElement);
+      });
   });
 
   return (
