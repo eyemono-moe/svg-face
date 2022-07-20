@@ -7,11 +7,12 @@ import Mouth from "./Mouth";
 const Face: Component<{ shape: TFace }> = (props) => {
   return (
     <svg
-      width="400"
-      height="400"
+      width="800"
+      height="800"
       viewBox="150 150 500 500"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      id="face"
     >
       <g
         id="all"
