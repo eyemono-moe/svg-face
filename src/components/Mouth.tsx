@@ -160,7 +160,6 @@ const Mouth: Component<{ mouthShape: TFace["mouth"]["shape"] }> = (props) => {
         key //@ts-ignore
       ) => (mouths[acc] > mouths[key] ? acc : key)
     );
-    console.log(props.mouthShape);
     // @ts-ignore
     return mouths[maxShape] > 0.001 ? svg[maxShape] : svg.default;
   };
