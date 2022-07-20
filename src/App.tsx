@@ -15,10 +15,10 @@ const App: Component = () => {
 
   return (
     <>
-        <div class={style.detectWrapper}>
-          <div class={style.detectResult}>
-            <video ref={videoElement!} />
-            <canvas ref={canvas!} />
+      <div class={style.detectWrapper}>
+        <div class={style.detectResult}>
+          <video ref={videoElement!} class={style.videoInput} />
+          <canvas ref={canvas!} />
         </div>
       </div>
       <Face shape={shape} />

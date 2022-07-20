@@ -7,3 +7,7 @@
 .detectResult>* {
   position: absolute;
 }
+
+.videoInput {
+  filter: blur(15px) grayscale(100%);
+}
