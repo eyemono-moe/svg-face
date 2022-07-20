@@ -2,6 +2,7 @@ import { TFace } from "kalidokit";
 import { Component } from "solid-js";
 import EyeLower from "./EyeLower";
 import EyeUpper from "./EyeUpper";
+import Mouth from "./Mouth";
 
 const Face: Component<{ shape: TFace }> = (props) => {
   return (
@@ -117,10 +118,7 @@ const Face: Component<{ shape: TFace }> = (props) => {
             fill="#DDFFFF"
           />
           <EyeUpper open={props.shape.eye.l} />
-          <path
-            d="M213.5 312C209.5 314 205 319 206.5 320C208 321 209.177 315.412 214 313C220 310 232 313.5 232 311C232 309 218.104 309.698 213.5 312Z"
-            fill="#661133"
-          />
+          <Mouth mouthShape={props.shape.mouth.shape} />
           <path
             d="M193 291C192.5 290.5 191.521 289.26 191 289C190 288.5 189 288.5 188 288.5C188.5 290 188.5 290 189 290.5C189.5 291 192 291 193 291Z"
             fill="#661133"
