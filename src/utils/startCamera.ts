@@ -6,6 +6,7 @@ const startCamera = (faceMesh: FaceMesh, videoElement: HTMLVideoElement) => {
     onFrame: async () => {
       await faceMesh.send({ image: videoElement });
     },
+    facingMode: "user",
     width: 400,
     height: 400,
   });
