@@ -31,7 +31,12 @@ const faceDetector = (
     animateFace(results.multiFaceLandmarks[0]);
   });
 
-  startCamera(faceMesh, videoElement);
+  const onFrame = async () => {
+    await faceMesh.send({ image: videoElement });
+  }
+
+  startCamera(onFrame, videoElement);
+  
 };
 
 export default faceDetector;
