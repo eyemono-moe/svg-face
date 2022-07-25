@@ -7,7 +7,10 @@ const startCamera = (onFrame: ()=>Promise<void>, videoElement: HTMLVideoElement)
     width: 400,
     height: 400,
   });
-  camera.start();
+  return camera.start().then(() => {
+    console.log("Camera started");
+    return camera
+  });
 };
 
 export default startCamera;

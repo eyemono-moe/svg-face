@@ -35,7 +35,7 @@ const faceDetector = (
     await faceMesh.send({ image: videoElement });
   }
 
-  startCamera(onFrame, videoElement);
+  return startCamera(onFrame, videoElement);
   
 };
 

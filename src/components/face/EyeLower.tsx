@@ -1,7 +1,7 @@
 import { TFace } from "kalidokit";
 import { Component } from "solid-js";
-import BlendSvg from "../utils/blendSvg";
-import SvgPath from "../utils/svgPath";
+import BlendSvg from "../../utils/blendSvg";
+import SvgPath from "../../utils/svgPath";
 
 const EyeLower: Component<{
   pupil: TFace["pupil"];

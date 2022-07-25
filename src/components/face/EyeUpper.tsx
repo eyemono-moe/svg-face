@@ -1,6 +1,6 @@
 import { Component } from "solid-js";
-import BlendSvg from "../utils/blendSvg";
-import SvgPath from "../utils/svgPath";
+import BlendSvg from "../../utils/blendSvg";
+import SvgPath from "../../utils/svgPath";
 
 const EyeUpper: Component<{ open: number }> = (props) => {
   const eyelashOpened = new SvgPath(
