@@ -3,7 +3,7 @@ import { useOptionContext } from "../context/OptionContext";
 import ControlToggleButton from "./OptionToggleButton";
 
 const ToggleResultControl: Component = () => {
-  const resultOnSvg = (
+  const resultOffSvg = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"
@@ -25,7 +25,7 @@ const ToggleResultControl: Component = () => {
     </svg>
   );
 
-  const resultOffSvg = (
+  const resultOnSvg = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"
@@ -39,10 +39,11 @@ const ToggleResultControl: Component = () => {
     </svg>
   );
 
-  const [_, setState] = useOptionContext();
+  const [state, setState] = useOptionContext();
 
   return (
     <ControlToggleButton
+      active={state.showDetectResult}
       activeContent={resultOnSvg}
       inactiveContent={resultOffSvg}
       onActivate={() => {

@@ -3,7 +3,7 @@ import { useOptionContext } from "../context/OptionContext";
 import ControlToggleButton from "./OptionToggleButton";
 
 const ToggleCameraControl: Component = () => {
-  const cameraOnSvg = (
+  const cameraOffSvg = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"
@@ -19,7 +19,7 @@ const ToggleCameraControl: Component = () => {
     </svg>
   );
 
-  const cameraOffSvg = (
+  const cameraOnSvg = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"
@@ -35,10 +35,11 @@ const ToggleCameraControl: Component = () => {
     </svg>
   );
 
-  const [_, setState] = useOptionContext();
+  const [state, setState] = useOptionContext();
 
   return (
     <ControlToggleButton
+      active={state.showCamera}
       activeContent={cameraOnSvg}
       inactiveContent={cameraOffSvg}
       onActivate={() => {

@@ -1,4 +1,5 @@
 import { FaceMesh } from "@mediapipe/face_mesh";
+import { useOptionContext } from "../components/context/OptionContext";
 import animateFace from "./animateFace";
 import drawFaceMesh from "./drawFaceMesh";
 import startCamera from "./startCamera";
@@ -22,21 +23,25 @@ const faceDetector = (
     minTrackingConfidence: 0.5,
   });
 
+  const [_, setState] = useOptionContext();
+
   // pass facemesh callback function
   faceMesh.onResults((results) => {
-    drawFaceMesh(results.multiFaceLandmarks[0], canvas, {
-      width: videoElement.videoWidth,
-      height: videoElement.videoHeight,
-    });
-    animateFace(results.multiFaceLandmarks[0]);
+    if (results.multiFaceLandmarks.length > 0) {
+      setState("loaded", true);
+      drawFaceMesh(results.multiFaceLandmarks[0], canvas, {
+        width: videoElement.videoWidth,
+        height: videoElement.videoHeight,
+      });
+      animateFace(results.multiFaceLandmarks[0]);
+    }
   });
 
   const onFrame = async () => {
     await faceMesh.send({ image: videoElement });
-  }
+  };
 
   return startCamera(onFrame, videoElement);
-  
 };
 
 export default faceDetector;

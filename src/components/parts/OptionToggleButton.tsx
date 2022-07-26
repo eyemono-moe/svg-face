@@ -7,12 +7,13 @@ import {
 } from "solid-js";
 
 const ControlToggleButton: Component<{
+  active: boolean;
   activeContent: JSXElement;
   inactiveContent: JSXElement;
   onActivate: (e: Event) => void;
   onDeactivate: (e: Event) => void;
 }> = (props) => {
-  const [active, setActive] = createSignal(false);
+  const [active, setActive] = createSignal(props.active);
   const id = createUniqueId();
 
   const handleClick = (e: Event) => {

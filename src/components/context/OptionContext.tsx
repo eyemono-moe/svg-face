@@ -4,6 +4,7 @@ import { createStore, SetStoreFunction } from "solid-js/store";
 export type OptionContextState = {
   showCamera: boolean;
   showDetectResult: boolean;
+  loaded: boolean;
 };
 
 export type OptionContextValue = [
@@ -14,6 +15,7 @@ export type OptionContextValue = [
 const defaultState: OptionContextState = {
   showCamera: true,
   showDetectResult: true,
+  loaded: false,
 };
 
 const OptionContext = createContext<OptionContextValue>([
