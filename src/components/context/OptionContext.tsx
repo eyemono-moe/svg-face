@@ -13,8 +13,8 @@ export type OptionContextValue = [
 ];
 
 const defaultState: OptionContextState = {
-  showCamera: true,
-  showDetectResult: true,
+  showCamera: false,
+  showDetectResult: false,
   loaded: false,
 };
 
